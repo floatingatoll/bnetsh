@@ -19,6 +19,7 @@ login_with_auth_code() {
 
 open_auth_window() {
     log "printf APIAUTHURL %s BNETSH_PORT"
+    # shellcheck disable=SC2059
     auth_target="$( printf "$APIAUTHURL" "$BNETSH_PORT" )"
     [[ -n $auth_target ]] || error "unable to craft auth target URL"
     echo "auth target: $auth_target"
