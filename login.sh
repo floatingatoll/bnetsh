@@ -7,6 +7,7 @@ http_postback() {
     # echo -ne "HTTP/1.0 200 OK\r\n\r\n" | nc -l 8080
     # GET /foo?bar=baz HTTP/1.1
     log "listening on $BNETSH_PORT"
+    log "UNIMPL: bnet requires https://"
     echo -ne "HTTP/1.0 200 OK\r\n\r\nOK" | nc -l $BNETSH_PORT | head -n1;
 }
 
