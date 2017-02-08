@@ -7,6 +7,7 @@
 
     defined "$BNETSH_PORT" || BNETSH_PORT=8080
 
+    defined "$APIAUTHURL" || error "APIAUTHURL not exported"
     defined "$APIURL" || error "APIURL not exported"
     defined "$APIKEY" || error "APIKEY not exported"
     defined "$BNETUSER" || error "BNETUSER not exported"

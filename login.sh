@@ -17,10 +17,19 @@ login_with_auth_code() {
     if false; then error "unable to login with auth code"; fi
 }
 
+open_auth_window() {
+    log "printf APIAUTHURL %s BNETSH_PORT"
+    auth_target="$( printf "$APIAUTHURL" "$BNETSH_PORT" )"
+    [[ -n $auth_target ]] || error "unable to craft auth target URL"
+    echo "auth target: $auth_target"
+    open "$auth_target"
+}
+
 login_with_credentials() {
     log "UNIMPL: login_with_credentials()"
-    log "TODO: open a login window"
-    log "listen for the token"
+    log "open authorization window"
+    open_auth_window
+    log "listening for the token postback"
     AUTH_CODE="$( http_postback )"
     [[ -n $AUTH_CODE ]] || error "Unable to get authcode from http_postback"
     login_with_auth_code
