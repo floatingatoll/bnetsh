@@ -1,0 +1,11 @@
+#!/bin/bash
+
+. functions.sh
+
+[[ -n $BNETSH_LOCAL ]] || {
+    BNETSH_LOCAL=1
+
+    BNETSH_PORT=8787
+    APIAUTHURL="https://example.com/PlaceHolderURL?returnTo=http://localhost:$BNETSH_PORT"
+    APIURL="https://example.com/"
+}
