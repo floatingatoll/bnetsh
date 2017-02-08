@@ -1,3 +1,5 @@
+#!/bin/bash
+
 [[ -n $BNETSH_FUNCTIONS ]] || {
     BNETSH_FUNCTIONS=1
 
